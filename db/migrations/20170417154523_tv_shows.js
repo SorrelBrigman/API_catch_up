@@ -10,7 +10,7 @@ exports.up = function(knex, Promise) {
   .createTable('favorites', function(table){
     table.increments();
     table.timestamp('dateAdded').notNullable().defaultTo(knex.fn.now())
-    table.integer('show_id').unsigned().references('shows.is')
+    table.integer('show_id').unsigned().references('shows.id')
   })
 
 };
